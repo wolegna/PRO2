@@ -1,0 +1,75 @@
+body {
+	background-image: url("images/background.jpg");
+	background-color: #cccccc;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: monospace;
+}
+
+.converter {
+	position: relative;
+	top: 40vh;
+	float: right;
+	right: 50px;
+	text-align: right;
+	color: aliceblue;
+
+}
+
+.converter h2 {
+	color: white;
+	font-family: monospace;
+}
+
+.map {
+	display: flex;
+	flex-flow: row nowrap;
+	position: absolute;
+	bottom: 50px;
+	left: 5vw;
+	width: 90vw;
+	height: auto;
+	align-items: center;
+	margin: auto;
+	border: auto;
+	padding: 0 auto;
+}
+
+#earth img {
+	position: relative;
+	width: 150px;
+	float: left;
+}
+
+#rocket img {
+	position: relative;
+	width: 50px;
+	height: 100px;
+	margin: 0 auto;
+	border: 0;
+	padding: 0;
+	transform: rotate(90deg);
+}
+
+.rocket {
+	position: absolute;
+	left: 10vw;
+	width: 50px;
+	height: 100px;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	z-index: 999;
+}
+
+#mars {
+	position: relative;
+	margin: 0 0 0 auto;
+	border: 0;
+	float: right;
+}
+
+#mars img {
+	width: 150px;
+}
