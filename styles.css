@@ -7,6 +7,10 @@ body {
 	font-family: monospace;
 }
 
+p {
+	font-size: 16px;
+}
+
 .converter {
 	position: relative;
 	top: 40vh;
@@ -20,6 +24,17 @@ body {
 .converter h2 {
 	color: white;
 	font-family: monospace;
+}
+
+.trip {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 30vw;
+	float: none;
+	top: 60vh;
+	justify-content: center;
+	color: white;
 }
 
 .map {
@@ -49,18 +64,19 @@ body {
 	margin: 0 auto;
 	border: 0;
 	padding: 0;
-	transform: rotate(90deg);
 }
 
 .rocket {
 	position: absolute;
-	left: 10vw;
+	left: 150px;
 	width: 50px;
 	height: 100px;
 	margin: 0;
 	border: 0;
 	padding: 0;
 	z-index: 999;
+	transform: rotate(90deg);
+
 }
 
 #mars {

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title>Mars Trip Interface</title>
 	<meta name="viewport" content="width=device-width">
-	<script src="main.js" defer></script>
+	<script src="script.js" defer></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,24 +13,30 @@
 	<div class="converter">
 		<h2>Unit Converter</h2>
 		<p>
-			<label>Earth Hours: </label>
-			<input id="inputEM" type="number" placeholder="Earth Hours" >
+			<label>Earth Days: </label>
+			<input id="inputEM" type="number" placeholder="Earth Days">
 		</p>
 		<p id="marsConv">Mars Hours: <span id="outputTime"></span></p>
-
-
-
 	</div>
+
+	<div class="trip">
+		<h2>Trip Distance</h2>
+		<br>
+		<p id="miles">0/225000000 KM</p>
+	</div>
+
 	<div class="map">
 		<div id="earth">
 			<img src="images/earth.png" alt="earth">
 		</div>
 		<div class="rocket" id="rocket">
-			<img src="images/rocket.png" alt="rocket" >
+			<img src="images/rocket.png" alt="rocket">
 		</div>
 		<div id="mars" class="mars">
 			<img src="images/mars.png" alt="mars">
 		</div>
 	</div>
 
-</body></html>
+</body>
+
+</html>
