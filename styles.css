@@ -5,6 +5,11 @@ body {
 	padding: 0;
 	text-align: center;
 	font-family: monospace;
+	color: white;
+}
+
+h1 {
+	font-size: 40px;
 }
 
 p {
@@ -13,18 +18,30 @@ p {
 
 .converter {
 	position: relative;
-	top: 40vh;
+	top: 10vh;
+}
+
+#inputTime {
 	float: right;
 	right: 50px;
 	text-align: right;
-	color: aliceblue;
-
 }
 
-.converter h2 {
-	color: white;
-	font-family: monospace;
+#inputFood {
+	float: left;
+	left: 50px;
+	text-align: left;
 }
+
+.mainText {
+	position: relative;
+	top: 0vh;
+}
+
+#end {
+	visibility: hidden;
+}
+
 
 .trip {
 	display: block;
@@ -32,9 +49,8 @@ p {
 	margin: 0 auto;
 	width: 30vw;
 	float: none;
-	top: 60vh;
+	top: 45vh;
 	justify-content: center;
-	color: white;
 }
 
 .map {
@@ -76,7 +92,7 @@ p {
 	padding: 0;
 	z-index: 999;
 	transform: rotate(90deg);
-
+	transition: ease;
 }
 
 #mars {

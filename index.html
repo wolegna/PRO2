@@ -10,18 +10,33 @@
 </head>
 
 <body>
-	<div class="converter">
+
+	<div class="mainText">
+		<h1 id="flight">Flight In Progress</h1>
+		<h1 id="end">You Have Landed on Mars</h1>
+	</div>
+
+	<div id="inputTime" class="converter">
 		<h2>Unit Converter</h2>
 		<p>
 			<label>Earth Days: </label>
-			<input id="inputEM" type="number" placeholder="Earth Days">
+			<input id="inputED" type=number placeholder="Earth Days">
 		</p>
-		<p id="marsConv">Mars Hours: <span id="outputTime"></span></p>
+		<p>Mars Hours: <span id="outputTime"></span></p>
+	</div>
+	<div id="inputFood" class="converter">
+		<h2>Food Stock</h2>
+		<p>
+			<label>Days in Space: </label>
+			<input id="inputFD" type=number placeholder=" 1 - 100">
+			<button id="calculate">Calculate</button>
+		</p>
+		<p>Food Left: <span id="outputFD"></span> KG</p>
+
 	</div>
 
 	<div class="trip">
 		<h2>Trip Distance</h2>
-		<br>
 		<p id="miles">0/225000000 KM</p>
 	</div>
 
@@ -37,6 +52,4 @@
 		</div>
 	</div>
 
-</body>
-
-</html>
+</body></html>
