@@ -5,6 +5,29 @@ html {
 	text-align: center;
 }
 
+
+#welcomeMessage {
+	position: relative;
+	justify-content: center;
+	text-align: center;
+	top: 25vh;
+	font-size: 2em;
+	animation: colorate 3s alternate infinite linear;
+	animation-play-state: paused;
+}
+
+.clock {
+	position: relative;
+	display: inline-flex;
+	top: 25vh;
+	width: 80vw;
+	justify-content: center;
+	text-align: center;
+	font-size: 8em;
+	transition: all 2s 0.2s ease-in-out;
+	margin-left: 0 auto;
+}
+
 @keyframes colorate {
 	0% {
 		color: green;
@@ -21,30 +44,6 @@ html {
 }
 
 
-
-#welcomeMessage {
-	position: relative;
-	justify-content: center;
-	text-align: center;
-	top: 25vh;
-	font-size: 2em;
-	animation: colorate 3s alternate infinite linear;
-	animation-play-state: paused;
-}
-
-
-
-.clock {
-	position: relative;
-	display: inline-flex;
-	top: 25vh;
-	width: 80vw;
-	justify-content: center;
-	text-align: center;
-	font-size: 8em;
-	transition: all 2s 0.2s ease-in-out;
-	margin-left: 0 auto;
-}
 
 .clockRotate {
 	position: relative;
@@ -71,37 +70,35 @@ html {
 		top: 20%;
 		left: 50%;
 		transform: rotate(90deg)
-		}
+	}
+
 	20% {
 		top: 40%;
 		left: 10%;
 		transform: rotate(280deg)
-		}
+	}
+
 	40% {
 		top: 60%;
 		left: 30%;
 		transform: rotate(190deg)
-		}
+	}
+
 	60% {
 		top: 60%;
 		left: 90%;
 		transform: rotate(360deg)
-		}
+	}
+
 	80% {
 		top: 40%;
 		left: 70%;
 		transform: rotate(50deg)
-		}
+	}
+
 	100% {
 		top: 20%;
 		left: 50%;
 		transform: rotate(90deg)
-		}
-
-	
-	
-	
-	
-	
-	
+	}
 }
