@@ -30,7 +30,7 @@ function updateTime(z) {
 
 currentTime();
 
-// clock rotate
+// clock rotate - click on clock to rotate
 
 var clock = document.getElementById('clock');
 
@@ -39,7 +39,7 @@ clock.onclick = function () {
 	clock.classList.toggle("clockRotate")
 };
 
-// text change colour animation
+// text change colour animation - press spacebar to activate/stop
 
 var textAnimation = document.getElementById("welcomeMessage");
 

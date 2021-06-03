@@ -16,18 +16,6 @@ html {
 	animation-play-state: paused;
 }
 
-.clock {
-	position: relative;
-	display: inline-flex;
-	top: 25vh;
-	width: 80vw;
-	justify-content: center;
-	text-align: center;
-	font-size: 8em;
-	transition: all 2s 0.2s ease-in-out;
-	margin-left: 0 auto;
-}
-
 @keyframes colorate {
 	0% {
 		color: green;
@@ -44,6 +32,17 @@ html {
 }
 
 
+.clock {
+	position: relative;
+	display: inline-flex;
+	top: 25vh;
+	width: 80vw;
+	justify-content: center;
+	text-align: center;
+	font-size: 8em;
+	transition: all 2s 0.2s ease-in-out;
+	margin-left: 0 auto;
+}
 
 .clockRotate {
 	position: relative;
