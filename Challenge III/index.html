@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>MapBox</title>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+	<script src="script.js" defer></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+	<link href="styles.css" rel="stylesheet" />
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css" />
+</head>
+
+<body>
+	<input type="text" id="cityName" placeholder="Type city name here">
+	<input type="button" id="getCity" value="Search">
+	<div id="coordinates"></div>
+	<div id="weather"></div>
+	<div id="elevation"></div>
+	<div id="map"></div>
+
+</body>
+
+</html>

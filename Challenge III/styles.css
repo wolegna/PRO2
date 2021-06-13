@@ -1,0 +1,13 @@
+body {
+	margin: 5vh 5vw;
+	justify-content: center;
+	background: #9b9fb2;
+	/* Old browsers */
+}
+
+#map {
+	height: 65vh;
+	width: 90vw;
+	top: 25vh;
+	margin: 0 auto;
+}
