@@ -56,13 +56,13 @@ function makeStuffHappen() {
 					var elevation = output[0].elevation;
 					document.getElementById('stats').innerHTML = 'City: ' + city + '<br>' +
 						'Country: ' + country + '<br>' +
-						'Elevation: ' + elevation + "<br>" +
+						'Elevation: ' + Math.floor(elevation) + ' meters' + '<br>' +
 						'Coordinates:' + '<br>' + 'latitude ' + lat + '<br>' + 'longitude ' + long;
 				})
 
 			// Weather API
 			var weatherAPI = 'a7aaa449b761b3a12a8dbd5a6468668d';
-			var weatherReq = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + long + '&appid=' + weatherAPI;
+			var weatherReq = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + long + '&appid=' + weatherAPI + '&units=metric';
 
 			fetch(weatherReq)
 
@@ -72,8 +72,8 @@ function makeStuffHappen() {
 
 				.then(function (response) {
 					console.log(response);
-					var degC = Math.floor(response.current.temp - 273.15) + ' C';
-					var feelsLike = Math.floor(response.current.feels_like - 273.15) + ' C';
+					var degC = Math.floor(response.current.temp) + '&deg;C';
+					var feelsLike = Math.floor(response.current.feels_like) + '&deg;C';
 					var currentWeather = response.current.weather[0].description;
 					if (degC === feelsLike) {
 						document.getElementById('weather').innerHTML =
@@ -92,7 +92,7 @@ function makeStuffHappen() {
 							'<br>' + 'Clouds: ' + response.current.clouds + '%' +
 							'<br>' + 'Wind Speed: ' +
 							response.current.wind_speed + ' km/h' + '<br>' +
-							'Humidity: ' + response.current.humidity + ' %';
+							'Humidity: ' + response.current.humidity + '%';
 					};
 				})
 		})
