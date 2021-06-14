@@ -1,7 +1,3 @@
-var lat;
-var long;
-
-
 //MapBox API stuff below
 mapboxgl.accessToken = 'pk.eyJ1Ijoid29sZWduYSIsImEiOiJja3B2NHNkdHUwaWNnMndwYXVweHVlOTNwIn0.X7_jLGP0-ISl8CV6ngP3BQ';
 
@@ -18,7 +14,7 @@ map.addControl(
 
 
 //GeoCoding API
-function getGeoCode() {
+function makeStuffHappen() {
 	var cityName = document.getElementById('cityName').value;
 	var city = cityName.charAt(0).toUpperCase() + cityName.slice(1);
 	var geoAPI = '53e35620-cc3a-11eb-9bab-550fa636e3b6';
@@ -32,10 +28,12 @@ function getGeoCode() {
 
 		.then(function (response) {
 			console.log(response);
-			lat = response.features[0].geometry.coordinates[0];
-			long = response.features[0].geometry.coordinates[1];
+
+			var lat = response.features[0].geometry.coordinates[0];
+			var long = response.features[0].geometry.coordinates[1];
+			var country = response.features[0].properties.country;
+
 			console.log(lat + ',' + long);
-			document.getElementById('coordinates').value = lat + long;
 			map = new mapboxgl.Map({
 				container: 'map',
 				style: 'mapbox://styles/mapbox/dark-v10',
@@ -56,8 +54,10 @@ function getGeoCode() {
 				.then(function (output) {
 					console.log(output);
 					var elevation = output[0].elevation;
-					document.getElementById('city').innerHTML = city;
-					document.getElementById('elevation').innerText = 'Elevation is ' + elevation + ' meters above sea level in ' + city;
+					document.getElementById('stats').innerHTML = 'City: ' + city + '<br>' +
+						'Country: ' + country + '<br>' +
+						'Elevation: ' + elevation + "<br>" +
+						'Coordinates:' + '<br>' + 'latitude ' + lat + '<br>' + 'longitude ' + long;
 				})
 
 			// Weather API
@@ -72,12 +72,31 @@ function getGeoCode() {
 
 				.then(function (response) {
 					console.log(response);
+					var degC = Math.floor(response.current.temp - 273.15) + ' C';
+					var feelsLike = Math.floor(response.current.feels_like - 273.15) + ' C';
+					var currentWeather = response.current.weather[0].description;
+					if (degC === feelsLike) {
+						document.getElementById('weather').innerHTML =
+							degC +
+							'<br>' + currentWeather +
+							'<br>' + 'Visibility: ' + Math.round(response.current.visibility / 100) + '%' +
+							'<br>' + 'Clouds: ' + response.current.clouds + '%' +
+							'<br>' + 'Wind Speed: ' +
+							response.current.wind_speed + ' km/h' + '<br>' +
+							'Humidity: ' + response.current.humidity + ' %';
+					} else {
+						document.getElementById('weather').innerHTML =
+							degC + ', Feels like ' + feelsLike +
+							'<br>' + currentWeather +
+							'<br>' + 'Visibility: ' + Math.round(response.current.visibility / 100) + '%' +
+							'<br>' + 'Clouds: ' + response.current.clouds + '%' +
+							'<br>' + 'Wind Speed: ' +
+							response.current.wind_speed + ' km/h' + '<br>' +
+							'Humidity: ' + response.current.humidity + ' %';
+					};
 				})
-
-
-
 		})
 }
 document.getElementById('getCity').onclick = function () {
-	getGeoCode();
+	makeStuffHappen();
 };
